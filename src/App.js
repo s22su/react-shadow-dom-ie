@@ -1,3 +1,4 @@
+// import '@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf';
 import React, { Component } from "react";
 import ShadowRoot from 'react-shadow-root';
 import { hot } from "react-hot-loader";
@@ -7,7 +8,7 @@ class App extends Component {
   render() {
     const shadowRootInnerHtml = () => {
       let html = '';
-      html += '<style>h1 { color: green; }</style>';
+      html += '<style scope="response-card">h1 { color: green; }</style>';
       html += '<h1>This h1 should be green!</h1>';
       return html;
     };
@@ -20,11 +21,11 @@ class App extends Component {
       <div className="App">
         <h1> This h1 tag should be red! </h1>
 
-        <div> // The shadow root will be attached to this DIV
+        <response-card> // The shadow root will be attached to this DIV
           <ShadowRoot>
             <div dangerouslySetInnerHTML={setInnerHtml(shadowRootInnerHtml())}></div>
           </ShadowRoot>
-        </div>
+        </response-card>
       </div>
     );
   }
