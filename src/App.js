@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ShadowRoot from 'react-shadow-root';
 import { hot } from "react-hot-loader";
+import '@webcomponents/webcomponentsjs';
 import "./App.css";
 
 class App extends Component {
